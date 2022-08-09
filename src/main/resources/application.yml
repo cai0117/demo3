@@ -1,0 +1,28 @@
+server:
+  port: 9091
+spring:
+  #解决集成swagger不兼容的问题
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+#  security:
+#    user:
+#      name: admin
+#      password: csw123
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/fruitdb?serverTimezone=GMT%2b8
+    username: root
+    password: csw123123
+mybatis-plus:
+  #设置xml文件扫描路径
+  mapper-locations: classpath:/mapper/**/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    #设置自增主键
+  global-config:
+    db-config:
+      id-type: auto
+files:
+  upload:
+    path: D:/img/files/
