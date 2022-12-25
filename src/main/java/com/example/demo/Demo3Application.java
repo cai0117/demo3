@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-@MapperScan("com.example.demo.fruit.mapper")
+@MapperScan("com.example.demo.movie.mapper")
 //@ComponentScan("com.example.demo")
 @EnableSwagger2
 public class Demo3Application {
