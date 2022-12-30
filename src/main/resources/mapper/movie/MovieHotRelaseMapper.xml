@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.movie.mapper.MovieHotRelaseMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.demo.movie.model.MovieHotRelase">
+        <id column="hot_id" property="hotId" />
+        <result column="title" property="title" />
+        <result column="cover" property="cover" />
+        <result column="director" property="director" />
+        <result column="protagonist" property="protagonist" />
+        <result column="type" property="type" />
+        <result column="movie_country" property="movieCountry" />
+        <result column="release" property="release" />
+        <result column="movie_time" property="movieTime" />
+        <result column="hot_short_commend" property="hotShortCommend" />
+        <result column="star" property="star" />
+        <result column="evaluate_num" property="evaluateNum" />
+        <result column="rate" property="rate" />
+        <result column="preview" property="preview" />
+    </resultMap>
+
+</mapper>

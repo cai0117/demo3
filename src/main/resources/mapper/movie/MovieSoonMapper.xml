@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.movie.mapper.MovieSoonMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.demo.movie.model.MovieSoon">
+        <id column="soon_id" property="soonId" />
+        <result column="title" property="title" />
+        <result column="cover" property="cover" />
+        <result column="seem_num" property="seemNum" />
+        <result column="director" property="director" />
+        <result column="protagonist" property="protagonist" />
+        <result column="type" property="type" />
+        <result column="movie_country" property="movieCountry" />
+        <result column="coming_data" property="comingData" />
+        <result column="movie_time" property="movieTime" />
+        <result column="preview" property="preview" />
+    </resultMap>
+
+</mapper>
