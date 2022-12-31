@@ -1,7 +1,8 @@
 package com.example.demo.movie.mapper;
 
-import com.example.demo.movie.model.MovieInfo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.example.demo.movie.model.MovieInfo;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -11,6 +12,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author CSW
  * @since 2022-12-29
  */
+@Mapper
 public interface MovieInfoMapper extends BaseMapper<MovieInfo> {
+
 
 }

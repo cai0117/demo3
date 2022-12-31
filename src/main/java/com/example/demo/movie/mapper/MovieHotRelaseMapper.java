@@ -2,6 +2,7 @@ package com.example.demo.movie.mapper;
 
 import com.example.demo.movie.model.MovieHotRelase;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.springframework.stereotype.Repository;
 
 /**
  * <p>
@@ -11,6 +12,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author CSW
  * @since 2022-12-30
  */
+@Repository
 public interface MovieHotRelaseMapper extends BaseMapper<MovieHotRelase> {
 
 }

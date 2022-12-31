@@ -1,5 +1,6 @@
 package com.example.demo.movie.model;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import java.util.Date;
@@ -42,22 +43,26 @@ public class MovieHotRelase implements Serializable {
     private String protagonist;
 
     @ApiModelProperty(value = "电影类型")
+    @TableField("`type`")
     private String type;
 
     private String movieCountry;
 
     @ApiModelProperty(value = "上映日期")
+    @TableField("`release`") //保留字段需要加上``
     private Date release;
 
     private String movieTime;
 
     @ApiModelProperty(value = "热短评")
+
     private String hotShortCommend;
 
     @ApiModelProperty(value = "点赞数")
     private Integer star;
 
     @ApiModelProperty(value = "评价人数")
+
     private Integer evaluateNum;
 
     @ApiModelProperty(value = "评分")

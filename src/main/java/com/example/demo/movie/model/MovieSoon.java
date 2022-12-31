@@ -1,15 +1,18 @@
 package com.example.demo.movie.model;
 
-import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
-import java.util.Date;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
-import java.io.Serializable;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * <p>
@@ -45,11 +48,13 @@ public class MovieSoon implements Serializable {
     private String protagonist;
 
     @ApiModelProperty(value = "电影类型")
+    @TableField("`type`")
     private String type;
 
     private String movieCountry;
 
     @ApiModelProperty(value = "上映日期")
+    @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     private Date comingData;
 
     private String movieTime;

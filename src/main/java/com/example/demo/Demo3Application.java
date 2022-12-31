@@ -10,7 +10,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 @MapperScan("com.example.demo.movie.mapper")
 //@ComponentScan("com.example.demo")
-@EnableSwagger2
+//@EnableSwagger2
 public class Demo3Application {
 
     public static void main(String[] args) {

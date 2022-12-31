@@ -7,8 +7,9 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.example.demo.exception.ServiceException;
-import com.example.demo.movie.model.Admin;
-import com.example.demo.movie.service.AdminService;
+
+import com.example.demo.movie.model.MovieUser;
+import com.example.demo.movie.service.MovieUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -19,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class JwtInterceptor implements HandlerInterceptor {
     @Autowired
-    AdminService adminService;
+    MovieUserService movieUserService;
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -41,7 +42,7 @@ public class JwtInterceptor implements HandlerInterceptor {
             throw new ServiceException("验证失败");
         }
         //根据id去查询数据库是否存在用户
-        Admin byId = adminService.getById(adminId);
+        MovieUser byId = movieUserService.getById(adminId);
         if (byId == null){
             throw new ServiceException("用户不存在，请重新登录");
         }

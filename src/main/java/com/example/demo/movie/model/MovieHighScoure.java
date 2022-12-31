@@ -1,5 +1,6 @@
 package com.example.demo.movie.model;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import java.util.Date;
@@ -45,11 +46,13 @@ public class MovieHighScoure implements Serializable {
     private String protagonist;
 
     @ApiModelProperty(value = "电影类型")
+    @TableField("`type`")
     private String type;
 
     private String movieCountry;
 
     @ApiModelProperty(value = "上映日期")
+    @TableField("`release`")
     private Date release;
 
     private String movieTime;
