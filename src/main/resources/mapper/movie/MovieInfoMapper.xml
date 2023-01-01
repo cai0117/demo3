@@ -9,6 +9,14 @@
         <result column="title" property="title" />
         <result column="cover" property="cover" />
         <result column="is_new" property="isNew" />
+        <result column="director" property="director" />
+        <result column="protagonist" property="protagonist" />
+        <result column="type" property="type" />
+        <result column="movie_country" property="movieCountry" />
+        <result column="release" property="release" />
+        <result column="movie_time" property="movieTime" />
+        <result column="hot_short_commend" property="hotShortCommend" />
+        <result column="evaluate_num" property="evaluateNum" />
     </resultMap>
 
 </mapper>
