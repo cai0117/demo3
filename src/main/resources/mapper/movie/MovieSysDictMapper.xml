@@ -10,6 +10,7 @@
         <result column="update_time" property="updateTime" />
         <result column="code" property="code" />
         <result column="value" property="value" />
+        <result column="color" property="color" />
     </resultMap>
 
 </mapper>
