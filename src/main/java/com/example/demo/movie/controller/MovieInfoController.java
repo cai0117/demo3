@@ -16,10 +16,7 @@ import com.example.demo.util.CommonResult;
 import com.example.demo.util.QueryPageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.CollectionUtils;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 
@@ -38,6 +35,10 @@ public class MovieInfoController {
     @Autowired
     MovieInfoMapper movieInfoMapper;
 
+
+    /**
+     * 分页查询
+     * */
     @PostMapping("/query")
     private CommonResult<PageOutDto<MovieInfo>> getMovieInfo(@RequestBody PageInputDto<QueryMovieHighSourceDto> input){
         LambdaQueryWrapper<MovieInfo> wrapper = Wrappers.lambdaQuery();
@@ -62,6 +63,10 @@ public class MovieInfoController {
         return CommonResult.success(out);
     }
 
+
+    /**
+     * 根据状态分页查询
+     * */
     @PostMapping("/page")
     private CommonResult<PageOutDto<MovieInfo>> getMovieInfoPage(@RequestBody PageInputDto<QueryMovieHighSourceDto> input){
         LambdaQueryWrapper<MovieInfo> wrapper = Wrappers.lambdaQuery();
@@ -86,6 +91,16 @@ public class MovieInfoController {
         }
         out = QueryPageUtil.toPageOut(result,result.getRecords());
         return CommonResult.success(out);
+    }
+
+
+
+    /**
+     * 根据movieId获取电影详情*/
+    @GetMapping("/{id}")
+    private CommonResult<MovieInfo> getMovieInfoById(@PathVariable("id") Integer id){
+        MovieInfo result = movieInfoMapper.selectById(id);
+        return CommonResult.success(result);
     }
 //    public MovieInfo getDtoById(Integer id) {
 //        MovieInfo entity = movieInfoMapper.selectById(id);
