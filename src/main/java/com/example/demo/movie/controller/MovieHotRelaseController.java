@@ -1,16 +1,14 @@
 package com.example.demo.movie.controller;
 
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.example.demo.movie.dto.HotReleaseDto;
-import com.example.demo.movie.dto.PageInputDto;
 import com.example.demo.movie.model.MovieHotRelase;
 import com.example.demo.movie.service.MovieHotRelaseService;
-import com.example.demo.util.CommonPage;
 import com.example.demo.util.CommonResult;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -35,6 +33,12 @@ public class MovieHotRelaseController {
 
         List<MovieHotRelase> result = movieHotRelaseService.getList();
 
+        return CommonResult.success(result);
+    }
+
+    @GetMapping("/{id}")
+    private CommonResult<MovieHotRelase> getHotMovie(@PathVariable("id") Integer id){
+        MovieHotRelase result = movieHotRelaseService.getById(id);
         return CommonResult.success(result);
     }
 

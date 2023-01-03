@@ -6,8 +6,8 @@ import com.example.demo.movie.model.MovieSoon;
 import com.example.demo.util.CommonResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -31,6 +31,12 @@ public class MovieSoonController {
     private CommonResult<List<MovieSoon>> getMovieSoon(){
         List<MovieSoon> res =  movieSoonMapper.selectList(null);
         return CommonResult.success(res);
+    }
+
+    @GetMapping("/{id}")
+    private CommonResult<MovieSoon> getSoonMovie(@PathVariable("id") Integer id){
+        MovieSoon result = movieSoonMapper.selectById(id);
+        return CommonResult.success(result);
     }
 }
 
