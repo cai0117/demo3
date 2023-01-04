@@ -62,5 +62,6 @@ public class MovieSoon implements Serializable {
     @ApiModelProperty(value = "预告片")
     private String preview;
 
-
+    @ApiModelProperty(value = "电影简介")
+    private String synopsis;
 }

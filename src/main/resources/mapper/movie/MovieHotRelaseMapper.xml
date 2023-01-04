@@ -18,6 +18,7 @@
         <result column="evaluate_num" property="evaluateNum" />
         <result column="rate" property="rate" />
         <result column="preview" property="preview" />
+        <result column="synopsis" property="synopsis" />
     </resultMap>
 
 </mapper>

@@ -15,6 +15,7 @@
         <result column="coming_data" property="comingData" />
         <result column="movie_time" property="movieTime" />
         <result column="preview" property="preview" />
+        <result column="synopsis" property="synopsis" />
     </resultMap>
 
 </mapper>

@@ -17,6 +17,7 @@
         <result column="movie_time" property="movieTime" />
         <result column="hot_short_commend" property="hotShortCommend" />
         <result column="evaluate_num" property="evaluateNum" />
+        <result column="synopsis" property="synopsis" />
     </resultMap>
 
 </mapper>

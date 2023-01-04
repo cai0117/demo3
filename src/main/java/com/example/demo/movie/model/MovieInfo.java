@@ -68,4 +68,6 @@ public class MovieInfo implements Serializable {
 
     private Integer evaluateNum;
 
+    @ApiModelProperty(value = "电影简介")
+    private String synopsis;
 }
