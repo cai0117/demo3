@@ -15,6 +15,7 @@
         <result column="gender" property="gender" />
         <result column="province_region_id" property="provinceRegionId" />
         <result column="city_region_id" property="cityRegionId" />
+        <result column="avatar_url" property="avatarUrl" />
     </resultMap>
 
 </mapper>

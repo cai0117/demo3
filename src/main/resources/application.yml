@@ -13,7 +13,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/movie?serverTimezone=GMT%2b8
     username: root
-    password: csw123123
+    password: mysqlcsw123
 mybatis-plus:
   #设置xml文件扫描路径
   mapper-locations: classpath:/mapper/**/*.xml

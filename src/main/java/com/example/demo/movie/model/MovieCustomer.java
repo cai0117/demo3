@@ -30,6 +30,7 @@ public class MovieCustomer implements Serializable {
 
     private String name;
 
+
     private String tel;
 
     private String origin;
@@ -48,5 +49,5 @@ public class MovieCustomer implements Serializable {
 
     private Long cityRegionId;
 
-
+    private String avatarUrl;
 }
