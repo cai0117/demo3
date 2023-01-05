@@ -2,17 +2,15 @@ package com.example.demo.movie.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.StrUtil;
-import cn.hutool.log.Log;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.demo.exception.ServiceException;
 import com.example.demo.movie.dto.LoginRequest;
 import com.example.demo.movie.dto.LoginResponse;
-import com.example.demo.movie.model.MovieCustomer;
 import com.example.demo.movie.mapper.MovieCustomerMapper;
+import com.example.demo.movie.model.MovieCustomer;
 import com.example.demo.movie.service.MovieCustomerService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.demo.util.javaToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,8 +26,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class MovieCustomerServiceImpl extends ServiceImpl<MovieCustomerMapper, MovieCustomer> implements MovieCustomerService {
 
-    private final static Log LOG = Log.get();
-
     @Autowired
     private MovieCustomerMapper movieCustomerMapper;
 
@@ -44,6 +40,7 @@ public class MovieCustomerServiceImpl extends ServiceImpl<MovieCustomerMapper, M
         lambdaQueryWrapper.eq(movieCustomer.getTel() != null,MovieCustomer::getTel,movieCustomer.getTel());
         MovieCustomer customerOne = movieCustomerMapper.selectOne(lambdaQueryWrapper);
         if(customerOne != null){
+            customerOne = getOne(lambdaQueryWrapper);
             loginResponse.setUserInfo(customerOne);
             String token = javaToken.generateToken(customerOne.getCustomerId().toString(), customerOne.getTel());//获取token
             loginResponse.setToken(token);//将token放到请求数据中
@@ -53,9 +50,10 @@ public class MovieCustomerServiceImpl extends ServiceImpl<MovieCustomerMapper, M
             BeanUtil.copyProperties(movieCustomer,customer);
             movieCustomerMapper.insert(customer);
             try{
-                customerOne = getOne(lambdaQueryWrapper);
-                loginResponse.setUserInfo(customerOne);
-                String token = javaToken.generateToken(customerOne.getCustomerId().toString(), customerOne.getTel());//获取token
+                QueryWrapper<MovieCustomer> queryWrapper = new QueryWrapper<>();
+                queryWrapper.eq("tel",Tel);
+                loginResponse.setUserInfo(getOne(queryWrapper));
+                String token = javaToken.generateToken(getOne(queryWrapper).getCustomerId().toString(), getOne(queryWrapper).getTel());//获取token
                 loginResponse.setToken(token);//将token放到请求数据中
                 return loginResponse;
             }catch(Exception e){
