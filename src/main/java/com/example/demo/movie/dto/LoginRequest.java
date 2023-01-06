@@ -12,12 +12,9 @@ public class LoginRequest {
 
     private String name;
 
-
     private String origin;
 
     private String avatarUrl;
 
-
-    private String token;
 
 }

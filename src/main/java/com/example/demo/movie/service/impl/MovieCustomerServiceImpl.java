@@ -30,9 +30,9 @@ public class MovieCustomerServiceImpl extends ServiceImpl<MovieCustomerMapper, M
     private MovieCustomerMapper movieCustomerMapper;
 
     @Override
-    public LoginResponse login(LoginRequest movieCustomer) {
+    public LoginResponse<MovieCustomer> login(LoginRequest movieCustomer) {
         String Tel = movieCustomer.getTel();
-        LoginResponse loginResponse = new LoginResponse();
+        LoginResponse<MovieCustomer> loginResponse = new LoginResponse<>();
         if(StrUtil.isBlank(Tel)){
             throw new ServiceException("手机号为空");
         }

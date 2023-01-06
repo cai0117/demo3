@@ -1,5 +1,7 @@
 package com.example.demo.movie.model;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.util.Date;
 import java.io.Serializable;
@@ -24,8 +26,9 @@ import lombok.experimental.Accessors;
 @ApiModel(value="MovieUser对象", description="")
 public class MovieUser implements Serializable {
 
-    private static final long serialVersionUID = 1L;
 
+    private static final long serialVersionUID = 1L;
+    @TableId(value = "user_id", type = IdType.AUTO)
     private Long userId;
 
     private String name;

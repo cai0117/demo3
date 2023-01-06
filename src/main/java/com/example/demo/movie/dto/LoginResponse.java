@@ -5,9 +5,9 @@ import com.example.demo.movie.model.MovieCustomer;
 import lombok.Data;
 
 @Data
-public class LoginResponse {
+public class LoginResponse<T> {
 
     private String token;
 //    private String refreshToken;
-    private MovieCustomer userInfo;
+    private T userInfo;
 }

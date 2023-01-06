@@ -1,5 +1,7 @@
 package com.example.demo.movie.service;
 
+import com.example.demo.movie.dto.LoginResponse;
+import com.example.demo.movie.dto.UserDto;
 import com.example.demo.movie.model.MovieUser;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface MovieUserService extends IService<MovieUser> {
 
+    LoginResponse<MovieUser> login(UserDto request);
 }
