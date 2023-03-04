@@ -1,8 +1,12 @@
 package com.example.demo.movie.model;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.util.Date;
 import java.io.Serializable;
+import java.util.List;
+
+import com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -20,7 +24,7 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("movie_customer")
+@TableName(value = "movie_customer",autoResultMap = true)
 @ApiModel(value="MovieCustomer对象", description="")
 public class MovieCustomer implements Serializable {
 
@@ -50,4 +54,7 @@ public class MovieCustomer implements Serializable {
     private Long cityRegionId;
 
     private String avatarUrl;
+
+    @TableField(value="movie", typeHandler = JacksonTypeHandler.class)
+    private List<MovieInfo> movie;
 }

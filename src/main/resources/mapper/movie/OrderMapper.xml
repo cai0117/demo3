@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.movie.mapper.OrderMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.demo.movie.model.Order" >
+        <id column="order_id" property="orderId" />
+        <result column="order_time" property="orderTime" />
+        <result column="pay_status" property="payStatus" />
+        <result column="order_price" property="orderPrice" />
+        <result column="customer_id" property="customerId" />
+        <result column="pay_price" property="payPrice" />
+        <result column="movie" property="movie" typeHandler="com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler"/>
+    </resultMap>
+
+</mapper>

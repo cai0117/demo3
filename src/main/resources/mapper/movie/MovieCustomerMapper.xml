@@ -3,7 +3,7 @@
 <mapper namespace="com.example.demo.movie.mapper.MovieCustomerMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.example.demo.movie.model.MovieCustomer">
+    <resultMap id="BaseResultMap" type="com.example.demo.movie.model.MovieCustomer" >
         <id column="customer_id" property="customerId" />
         <result column="name" property="name" />
         <result column="tel" property="tel" />
@@ -16,6 +16,7 @@
         <result column="province_region_id" property="provinceRegionId" />
         <result column="city_region_id" property="cityRegionId" />
         <result column="avatar_url" property="avatarUrl" />
+        <result column="movie"  property="movie" typeHandler="com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler"/>
     </resultMap>
 
 </mapper>

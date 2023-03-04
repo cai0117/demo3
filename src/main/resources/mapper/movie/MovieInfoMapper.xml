@@ -18,6 +18,9 @@
         <result column="hot_short_commend" property="hotShortCommend" />
         <result column="evaluate_num" property="evaluateNum" />
         <result column="synopsis" property="synopsis" />
+        <result column="is_new" property="isNew" />
+        <result column="is_hot" property="isHot" />
+
     </resultMap>
 
 </mapper>
