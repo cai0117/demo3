@@ -1,17 +1,18 @@
 package com.example.demo.movie.model;
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
-import java.io.Serializable;
-
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+
+import java.io.Serializable;
 
 /**
  * <p>
@@ -24,9 +25,9 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName(value = "order",autoResultMap = true)
+@TableName(value = "movie_order",autoResultMap = true)
 @ApiModel(value="Order对象", description="订单")
-public class Order implements Serializable {
+public class MovieOrder implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -35,6 +36,7 @@ public class Order implements Serializable {
     private Integer orderId;
 
     @ApiModelProperty(value = "下单时间")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     private String orderTime;
 
     @ApiModelProperty(value = "订单状态")
@@ -51,7 +53,7 @@ public class Order implements Serializable {
 
     @ApiModelProperty(value = "关联电影")
     @TableField(value = "movie",typeHandler = JacksonTypeHandler.class)
-    private String movie;
+    private MovieInfo movie;
 
 
 }

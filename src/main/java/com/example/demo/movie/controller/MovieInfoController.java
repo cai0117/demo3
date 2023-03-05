@@ -8,9 +8,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.demo.movie.dto.PageInputDto;
 import com.example.demo.movie.dto.PageOutDto;
 import com.example.demo.movie.dto.QueryMovieHighSourceDto;
-import com.example.demo.movie.dto.QueryMovieInfoDto;
 import com.example.demo.movie.mapper.MovieInfoMapper;
-import com.example.demo.movie.model.MovieHighScoure;
 import com.example.demo.movie.model.MovieInfo;
 import com.example.demo.util.CommonResult;
 import com.example.demo.util.QueryPageUtil;
@@ -62,6 +60,7 @@ public class MovieInfoController {
         out = QueryPageUtil.toPageOut(result,result.getRecords());
         return CommonResult.success(out);
     }
+
 
 
     /**

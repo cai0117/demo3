@@ -1,6 +1,6 @@
 package com.example.demo.movie.mapper;
 
-import com.example.demo.movie.model.Order;
+import com.example.demo.movie.model.MovieOrder;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author CSW
  * @since 2023-03-04
  */
-public interface OrderMapper extends BaseMapper<Order> {
+public interface MovieOrderMapper extends BaseMapper<MovieOrder> {
 
 }
